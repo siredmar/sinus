@@ -8,8 +8,10 @@ The output is transfered into a channel the caller must provide.
 Run the example
 
 ```sh
-go run example/main.go
+timeout 5s go run example/main.go > dat
+gnuplot -e "plot \"dat\"" -p
 ```
 
+![gnuplot of dat](https://github.com/siredmar/sinus/blob/main/.assets/dat.png?raw=true)
 
 
