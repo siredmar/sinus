@@ -3,6 +3,10 @@
 This golang package can create sinus waves that are overlayed with a given configuration and sample rate.
 The output is transfered into a channel the caller must provide. Multiple sinus waves can be overlayed in the output.
 
+# Installation
+
+Run `go get github.com/siredmar/sinus@latest`.
+
 ## Example
 
 Run the example that uses the following configuration to generate an overlay of sinus waves.
