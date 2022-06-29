@@ -54,9 +54,11 @@ config := &sinus.Config{
 	}
 ```
 
+Run the example and plot the data
+
 ```sh
-timeout 5s go run example/main.go > dat
-gnuplot -e "plot \"dat\"" -p
+$ timeout 5s go run example/main.go > dat
+$ gnuplot -e "plot \"dat\"" -p
 ```
 
 ![gnuplot of dat](https://github.com/siredmar/sinus/blob/main/.assets/dat.png?raw=true)
