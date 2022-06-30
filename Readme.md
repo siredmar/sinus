@@ -9,58 +9,82 @@ Run `go get github.com/siredmar/sinus@latest`.
 
 ## Example
 
-Run the example that uses the following configuration to generate an overlay of sinus waves.
+See the example that uses the following configuration to generate an overlay of sinus waves.
 
 ```go
 config := &sinus.Config{
 		Curves: []sinus.Spec{
 			{
-				Enabled:   true,
-				Frequency: 1.0,
-				Amplitude: 0.2,
+				Enabled:    true,
+				Frequency:  0.0,
+				Amplitude:  1,
+				Offset:     0.0,
+				PhaseShift: 0.0,
 			},
 			{
-				Enabled:   true,
-				Frequency: 2.2,
-				Amplitude: 0.6,
+				Enabled:    true,
+				Frequency:  1.0,
+				Amplitude:  0.2,
+				Offset:     0.0,
+				PhaseShift: 0.0,
 			},
 			{
-				Enabled:   true,
-				Frequency: 3.3,
-				Amplitude: 0.5,
+				Enabled:    true,
+				Frequency:  5.2,
+				Amplitude:  0.6,
+				Offset:     0.0,
+				PhaseShift: 0.0,
 			},
 			{
-				Enabled:   true,
-				Frequency: 4.1,
-				Amplitude: 0.4,
+				Enabled:    true,
+				Frequency:  12.3,
+				Amplitude:  0.5,
+				Offset:     0.0,
+				PhaseShift: 0.0,
 			},
 			{
-				Enabled:   true,
-				Frequency: 5.7,
-				Amplitude: 0.3,
+				Enabled:    true,
+				Frequency:  21.1,
+				Amplitude:  0.4,
+				Offset:     0.0,
+				PhaseShift: 0.0,
 			},
 			{
-				Enabled:   true,
-				Frequency: 6.3,
-				Amplitude: 0.2,
+				Enabled:    true,
+				Frequency:  55.7,
+				Amplitude:  0.3,
+				Offset:     0.0,
+				PhaseShift: 0.0,
 			},
 			{
-				Enabled:   true,
-				Frequency: 7.1,
-				Amplitude: 0.1,
+				Enabled:    true,
+				Frequency:  66.3,
+				Amplitude:  0.2,
+				Offset:     0.0,
+				PhaseShift: 0.0,
+			},
+			{
+				Enabled:    true,
+				Frequency:  77.1,
+				Amplitude:  0.1,
+				Offset:     0.0,
+				PhaseShift: 0.0,
 			},
 		},
-		SampleRateMs: 1,
+		MinCap:        sinus.NaN,
+		MaxCap:        sinus.NaN,
+		OverallOffset: 0.0,
+		SampleRate:    time.Microsecond * 1,
 	}
 ```
 
 Run the example and plot the data
 
 ```sh
-$ timeout 5s go run example/main.go > dat
-$ gnuplot -e "plot \"dat\"" -p
+$ timeout 4s go run example/noise/main.go > noise
+$ gnuplot -e "plot \"noise\"" -p
 ```
 
-![gnuplot of dat](https://github.com/siredmar/sinus/blob/main/.assets/dat.png?raw=true)
+![gnuplot of noise](https://github.com/siredmar/sinus/blob/main/.assets/noise.png?raw=true)
 
 
